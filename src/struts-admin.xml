@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="admin" extends="json-default" namespace="/admin">
+		<result-types>
+            <result-type name="excel" class="com.nkl.common.util.Struts2ExcelResultSupport"/>
+        </result-types>
+	
+	  	<action name="Login*" class="com.nkl.admin.action.LoginAction" method="{1}">
+	  		<result name="error">login.jsp</result>
+	  		<result name="success" type="redirect">index.jsp</result>
+	  		<result name="logout" type="redirect">login.jsp</result>
+	  	</action>
+	  	
+	  	<action name="Admin_*" class="com.nkl.admin.action.AdminAction" method="{1}">
+	  		<result name="loginTip" type="redirect">loginTip.jsp</result>
+	  		<result name="error">error.jsp</result>
+	  		<result name="infoTip">infoTip.jsp</result>
+	  		<result name="userInfo" type="redirect">modifyInfo.jsp</result>
+	  		<result name="userPwd" type="redirect">modifyPwd.jsp</result>
+	  		<result name="inputUserName">inputUserName.jsp</result>
+	  		<result name="inputUserAnswer">inputUserAnswer.jsp</result>
+	  		<result name="resetPass">resetPass.jsp</result>
+	  		<result name="clazzShow">clazzShow.jsp</result>
+	  		<result name="clazzEdit">clazzEdit.jsp</result>
+	  		<result name="teacherShow">teacherShow.jsp</result>
+	  		<result name="teacherEdit">teacherEdit.jsp</result>
+	  		<result name="userShow">userShow.jsp</result>
+	  		<result name="userEdit">userEdit.jsp</result>
+	  		<result name="evaluateShow">evaluateShow.jsp</result>
+	  		<result name="evaluateEdit">evaluateEdit.jsp</result>
+	  		<result name="evaluateSumShow">evaluateSumShow.jsp</result>
+	  	</action>
+	  	
+	  	<action name="export*" class="com.nkl.admin.action.ExportExcelAction" method="export{1}">
+			<result name="success" type="excel">
+				template/{1}.xls
+			</result>
+			<result name="error" type="json">
+			    <param name="contentType">text/html;charset=utf-8</param>
+			    <param name="includeProperties">
+					success,errorReason.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="Import_*" class="com.nkl.admin.action.ImportExcelAction" method="import{1}">
+	  		<param name="xmlFileName">template/{1}.xml</param> 
+	  		<result name="success">import{1}.jsp</result>
+	  		<result name="input">import{1}.jsp</result>
+	  	</action>
+	  	
+	</package>
+</struts>    

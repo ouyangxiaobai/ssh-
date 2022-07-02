@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+	<!--sheet表单序号从0开始编号，行号从1开始编号-->
+	<worksheet sheet="0" startRow="2" endRow="5000">
+		<!--列号从0开始编号-->
+		<column col="0" name="user_name" desc="学号">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写学号">
+			</valid>
+		</column>
+		<column col="1" name="user_pass" desc="密码">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写密码">
+			</valid>
+		</column>
+		<column col="2" name="real_name" desc="姓名">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写姓名">
+			</valid>
+		</column>
+		<column col="3" name="user_sex" desc="性别">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写性别">
+			</valid>
+		</column>
+		<column col="4" name="user_age" desc="年龄">
+			<valid javaType="java.lang.Integer" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写年龄">
+			</valid>
+		</column>
+		<column col="5" name="clazz_name" desc="班级">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写班级">
+			</valid>
+		</column>
+		<column col="6" name="user_score" desc="平均成绩">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写平均成绩">
+			</valid>
+		</column>
+		<column col="7" name="user_gscore" desc="G点分">
+			<valid javaType="java.lang.String" nullable="false" minLength="1"
+				maxLength="50" regEx="" hint="请正确填写G点分">
+			</valid>
+		</column>
+	</worksheet>
+</workbook>
